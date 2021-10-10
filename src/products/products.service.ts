@@ -18,4 +18,8 @@ export class ProductsService {
   async findAll(): Promise<Product[]> {
     return this.productModel.find().exec();
   }
+
+  async delete(id: string): Promise<Product> {
+    return this.productModel.findByIdAndDelete(id).exec();
+  }
 }
