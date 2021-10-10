@@ -17,6 +17,11 @@ export class ProductsController {
     return this.productsService.findAll();
   }
 
+  @Get(':id')
+  async findById(@Param('id') id: string) {
+    return this.productsService.findById(id);
+  }
+
   @Delete(':id')
   async delete(@Param('id') id: string) {
     return this.productsService.delete(id);

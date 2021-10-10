@@ -19,6 +19,10 @@ export class ProductsService {
     return this.productModel.find().exec();
   }
 
+  async findById(id: string): Promise<Product> {
+    return this.productModel.findById(id).exec();
+  }
+
   async delete(id: string): Promise<Product> {
     return this.productModel.findByIdAndDelete(id).exec();
   }
