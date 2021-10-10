@@ -15,6 +15,14 @@ export class ProductsService {
     return createProduct.save();
   }
 
+  async update(
+    createProductDto: CreateProductDto,
+    id: string,
+  ): Promise<Product> {
+    const updateProduct = new this.productModel(createProductDto);
+    return this.productModel.findByIdAndUpdate(id, updateProduct);
+  }
+
   async findAll(): Promise<Product[]> {
     return this.productModel.find().exec();
   }
